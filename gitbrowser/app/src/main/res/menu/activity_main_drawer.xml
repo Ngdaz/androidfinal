@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_profile"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_notifications"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_news"
+            android:title="News" />
+        <item
+            android:id="@+id/nav_issues"
+            android:icon="@drawable/ic_issue"
+            android:title="Issues" />
+    </group>
+
+    <item android:title="Upload">
+        <menu>
+            <item
+                android:id="@+id/nav_repos"
+                android:icon="@drawable/ic_repos"
+                android:title="My repos" />
+            <item
+                android:id="@+id/nav_starred"
+                android:icon="@drawable/ic_starred"
+                android:title="Starred repos" />
+            <item
+                android:id="@+id/nav_bookmarks"
+                android:icon="@drawable/ic_bookmark"
+                android:title="Bookmarks" />
+        </menu>
+    </item>
+
+    <item android:title="Function">
+        <menu>
+            <item
+                android:id="@+id/nav_search"
+                android:icon="@drawable/ic_search"
+                android:title="Search" />
+            <item
+                android:id="@+id/nav_trace"
+                android:icon="@drawable/ic_trace"
+                android:title="Trace" />
+            <item
+                android:id="@+id/nav_trending"
+                android:icon="@drawable/ic_trending"
+                android:title="Trending repos" />
+            <item
+                android:id="@+id/nav_collections"
+                android:icon="@drawable/ic_repos_collect"
+                android:title="Repos collections"/>
+            <item
+                android:id="@+id/nav_topics"
+                android:icon="@drawable/ic_featured_topic"
+                android:title="Featured topics" />
+            <item
+                android:id="@+id/nav_global"
+                android:icon="@drawable/ic_global"
+                android:title="Global news" />
+        </menu>
+    </item>
+
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="About" />
+        </menu>
+    </item>
+</menu>

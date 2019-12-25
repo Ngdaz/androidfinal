@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_profile">
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.gitbrowser.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/nav_notifications"
+        android:name="com.example.gitbrowser.ui.notifications.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/nav_news"
+        android:name="com.example.gitbrowser.ui.news.NewsFragment"
+        android:label="News"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/nav_issues"
+        android:name="com.example.gitbrowser.ui.issues.IssuesFragment"
+        android:label="Issues"
+        tools:layout="@layout/fragment_issues" />
+
+    <fragment
+        android:id="@+id/nav_repos"
+        android:name="com.example.gitbrowser.ui.repos.ReposFragment"
+        android:label="My repos"
+        tools:layout="@layout/fragment_repos" />
+
+    <fragment
+        android:id="@+id/nav_starred"
+        android:name="com.example.gitbrowser.ui.starred.StarredFragment"
+        android:label="Starred repos"
+        tools:layout="@layout/fragment_starred" />
+
+    <fragment
+        android:id="@+id/nav_bookmarks"
+        android:name="com.example.gitbrowser.ui.bookmarks.BookmarksFragment"
+        android:label="Bookmarks"
+        tools:layout="@layout/fragment_bookmarks" />
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.example.gitbrowser.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/nav_trace"
+        android:name="com.example.gitbrowser.ui.trace.TraceFragment"
+        android:label="Trace"
+        tools:layout="@layout/fragment_trace" />
+
+    <fragment
+        android:id="@+id/nav_trending"
+        android:name="com.example.gitbrowser.ui.trending.TrendingFragment"
+        android:label="Trending repos"
+        tools:layout="@layout/fragment_trending" />
+
+    <fragment
+        android:id="@+id/nav_collections"
+        android:name="com.example.gitbrowser.ui.collections.CollectionsFragment"
+        android:label="Repos collections"
+        tools:layout="@layout/fragment_collections" />
+
+    <fragment
+        android:id="@+id/nav_topics"
+        android:name="com.example.gitbrowser.ui.topics.TopicsFragment"
+        android:label="Featured topics"
+        tools:layout="@layout/fragment_topics" />
+
+    <fragment
+        android:id="@+id/nav_global"
+        android:name="com.example.gitbrowser.ui.global.GlobalFragment"
+        android:label="Global news"
+        tools:layout="@layout/fragment_global" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.gitbrowser.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.gitbrowser.ui.about.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+</navigation>
