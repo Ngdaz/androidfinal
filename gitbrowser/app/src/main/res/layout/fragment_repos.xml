@@ -5,12 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
         android:id="@+id/txtResponse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40px"
         android:padding="20dp" />
-
+    </ScrollView>
 </RelativeLayout>

@@ -71,12 +71,12 @@ public class ReposFragment extends Fragment {
                         JSONObject repoObject = (JSONObject) response
                                 .get(i);
                         String name = repoObject.getString("name");
-//                        String full_name = repoObject.getString("full_name");
-//                        String login = repoObject.getString("login");
-                        Log.i("abcd","hien len pls" );
+                        String full_name = repoObject.getString("full_name");
+                        String id = repoObject.getString("id");
+                        Log.i("abcd","hien len pls" + full_name);
                         finalString += "name: " + name + "\n\n";
-//                        finalString += "full_name: " + full_name + "\n\n";
-//                        finalString += "login: " + login + "\n\n\n";
+                        finalString += "full_name: " + full_name + "\n\n";
+                        finalString += "login: " + id + "\n\n\n";
 
                     }
                     tv.setText(finalString);
