@@ -14,12 +14,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
@@ -49,28 +51,36 @@ public class ReposFragment extends Fragment {
         requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         tv = (TextView) v.findViewById(R.id.txtResponse);
         requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        jsonParese("portgasdax99");
+        jsonParese("phuongminh2303");
+        Log.i("abcde", "hehehe");
         return v;
     }
 
     private void jsonParese(String username){
-        String searchRepo = "https://api.github.com/users/" + username +"/repos";
+        final String searchRepo = "https://api.github.com/users/" + username +"/repos";
+        Log.i("abcde", searchRepo);
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, searchRepo, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
                 try {
-                    String finalString = "";
+                    finalString = "";
+                    Log.i("abcd", "dung r" + response.toString());
                     for (int i = 0; i < response.length(); i++) {
-                        JSONObject repoObject = (JSONObject) response.getJSONObject(i);
+                        JSONObject repoObject = (JSONObject) response
+                                .get(i);
+                        Log.i("abcd", "err" + repoObject);
                         String name = repoObject.getString("name");
                         String description = repoObject.getString("description");
                         String login = repoObject.getString("login");
-                        finalString += "Name: " + name + "\n\n";
+                        Log.i("abcd","sai r" + name);
+//                        finalString += ("Name: " + name + "\n\n");
+                        Log.i("abcde","finalstring here " + finalString);
                         finalString += "description: " + description + "\n\n";
-                        finalString += "login: " + login + "\n\n\n";
-                        tv.append(name);
+//                        finalString += "login: " + login + "\n\n\n";
+//                        tv.append(name);
+
                     }
                     tv.setText(finalString);
                 } catch (JSONException e) {
@@ -80,6 +90,7 @@ public class ReposFragment extends Fragment {
         },new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG,"error: " + error.getMessage());
                 Log.i("Error", "Error here!");
             }
         }
