@@ -51,35 +51,32 @@ public class ReposFragment extends Fragment {
         requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         tv = (TextView) v.findViewById(R.id.txtResponse);
         requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        jsonParese("phuongminh2303");
+        jsonParese("portgasdax99") ;
         Log.i("abcde", "hehehe");
         return v;
+
     }
 
-    private void jsonParese(String username){
+    private void jsonParese(final String username){
         final String searchRepo = "https://api.github.com/users/" + username +"/repos";
-        Log.i("abcde", searchRepo);
+        Log.i("abcd","" + searchRepo);
+        JsonArrayRequest request = new JsonArrayRequest(searchRepo,new Response.Listener<JSONArray>() {
 
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, searchRepo, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-
-                try {
-                    finalString = "";
-                    Log.i("abcd", "dung r" + response.toString());
+                Log.i("abcd","abcd" + response.toString());
+               try {
+                    String finalString = "";
                     for (int i = 0; i < response.length(); i++) {
                         JSONObject repoObject = (JSONObject) response
                                 .get(i);
-                        Log.i("abcd", "err" + repoObject);
                         String name = repoObject.getString("name");
-                        String description = repoObject.getString("description");
-                        String login = repoObject.getString("login");
-                        Log.i("abcd","sai r" + name);
-//                        finalString += ("Name: " + name + "\n\n");
-                        Log.i("abcde","finalstring here " + finalString);
-                        finalString += "description: " + description + "\n\n";
+//                        String full_name = repoObject.getString("full_name");
+//                        String login = repoObject.getString("login");
+                        Log.i("abcd","hien len pls" );
+                        finalString += "name: " + name + "\n\n";
+//                        finalString += "full_name: " + full_name + "\n\n";
 //                        finalString += "login: " + login + "\n\n\n";
-//                        tv.append(name);
 
                     }
                     tv.setText(finalString);
